@@ -1,0 +1,161 @@
+
+.body{
+    margin : 0px;
+    padding : 0px;
+    box-sizing: border-box;
+}
+.header{
+    font-size: 17px;
+    font-family: candara;
+}
+.main-container{
+    margin: 10% 5%;
+    padding: 2rem;
+    border: 1px solid rgb(224,224,224) ;
+    border-radius: 15px;
+    box-shadow: 10px 7px 0 rgb(224,224,224);
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+
+    input[type=text], select, textarea {
+        display: flex;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        /* resize: vertical; */
+    }
+    
+    @media screen and (max-width: 680px) {
+        .header, .mainform, input[type=submit] {
+          margin: 35px 0px 0px 0px;
+        }
+      }
+      
+
+      .navbar{
+    background-color: #fff;
+    height: 60px;
+}
+
+.navbar-brand{
+    font-weight: 500;
+    color: rgb(52, 144, 113);
+    font-size: 24px;
+    transition: 0.3s color;
+}
+
+.login-button{
+    background-color: rgb(52, 144, 113);
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover{
+    background-color: rgb(86, 220, 175);
+}
+
+.navbar-togger{
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-togger:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active{
+    color: #000;
+}
+@media(min-width: 991px){
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: rgb(52, 144, 113);
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%; /* Adjust to full width */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px 40px 10px 20px; /* Adjust padding for icon */
+    border-radius: 20px;
+    border: 2px solid #66ccff;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-bar:focus {
+    border-color: #0096ff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 150, 255, 0.5); /* Add glow effect */
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 15px; /* Position icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #66ccff;
+    /* pointer-events: none;  */
+  }
+  
+
+  .card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.card .btn {
+    margin-top: auto;
+}

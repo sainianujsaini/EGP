@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+  <body>
+    
+        <div class='ripple-background'>
+            <div class='circle xxlarge shade1'></div>
+            <div class='circle xlarge shade2'></div>
+            <div class='circle large shade3'></div>
+            <div class='circle medium shade4'></div>
+            <div class='circle small shade5'></div>
+        </div>
+      
+    <div class="home-navbar">
+      <div class="app-logo"><h1>E-GP</h1></div>
+    </div>
+    <div class="content">
+      <div class="login-div">
+        <div class="login-container">
+          <div class="login-account-type-text">
+            <h2>Choose Account Type</h2>
+          </div>
+          <div class="login-account-selection-div">
+            <div class="login-account-img" account = "user">1</div>
+            <div class="login-account-img" account = "staff">2</div>
+            <div class="login-account-img" account = "officer">3</div>
+          </div>
+          <form class="login-form" action = "/login" method = "post">
+            <input type="hidden" name="accountType" id="accountType" value="user" />
+            <div class="input-field">
+              <div class="input-element">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  class="form-input email"
+                  name="email"
+                  type="email"
+                  placeholder="email"
+                  required
+                />
+              </div>
+              <div class="input-element">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  class="form-input password"
+                  name="password"
+                  type="password"
+                  placeholder="password"
+                  required
+                />
+                </div>
+              <div class="input-element">
+                <button type="submit" class="btn btn-primary btn-md">Log In</button>
+              </div>
+            
+          </form>
+          <div class="or-divider">
+            <hr><span>or</span><hr>
+        </div>
+        <div class="google-login">
+            <button type = "button" class="btn btn-sm" onclick="event.preventDefault(); window.location.href='/auth/google'">
+                <i class="fa-brands fa-google"></i>
+                <span>Sign in with Google</span>
+            </button>
+        </div>
+        <div class="create-account">
+            <p>New User? <a href="/register">Create Account</a></p>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/e95a92cdc1.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+        var account_types_img = document.querySelectorAll(".login-account-img");
+        account_types_img[0].classList.add("selected");
+        for(var i = 0 ; i < account_types_img.length ; i++){
+            account_types_img[i].addEventListener('click' , function(){
+                for(var j = 0 ; j < account_types_img.length ; j++){
+                    account_types_img[j].classList.remove("selected");
+                }
+                this.classList.add('selected');
+                var account_input_form = document.getElementById('accountType');
+                account_input_form.setAttribute("value" , this.getAttribute("account"));
+                console.log(account_input_form);
+            });
+        }
+  </script>
+</html>
